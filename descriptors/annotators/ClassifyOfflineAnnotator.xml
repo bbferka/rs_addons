@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.cpp</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>rs_classifyOfflineAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>ClassifyOfflineAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    
+    <configurationParameters>
+     
+      <configurationParameter>
+        <name>classifier_type</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+        </configurationParameter>
+
+      <configurationParameter>
+        <name>trained_model_name</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>test_data_name</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>test_label_name</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>actual_class_label</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+   
+      <configurationParameter>
+        <name>trainData_matrix</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>trainLabel_matrix</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+
+    <configurationParameterSettings>
+      
+      <nameValuePair>
+        <name>classifier_type</name>
+        <description>classifier_type should be rssvm, rsrf, rsgbt, rsknn</description> 
+        <value>     
+          <string>rsrf</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>trained_model_name</name>
+        <description>train_model_name can be found in path /rs_addons/trainedData/ </description> 
+        <value>   
+          <string>IAI_CNN_rsrfModel_objects</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>test_data_name</name>
+        <description>test_data_name can be found in path /rs_resources/objects_dataset/extractedFeat/ </description>
+        <value>
+          <string>IAI_CNN_MatTest_objects</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>test_label_name</name>
+        <description>test_label_name can be found in path /rs_resources/objects_dataset/extractedFeat/ </description>
+        <value>       
+          <string>IAI_CNN_MatTestLabel_objects</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>actual_class_label</name>
+        <description>actual_class_label can be found in path /rs_resources/objects_dataset/extractedFeat/,
+            which is object to class map </description> 
+        <value>      
+          <string>IAI_CNN_ClassLabel_objects</string>
+        </value>
+      </nameValuePair>
+
+       <description>If classifier_type is rsknn instead of trained_model_name provide the following two parameters </description>
+      <nameValuePair>
+        <name>trainData_matrix</name>
+        <description>trainData_matrix can be found in path /rs_resources/objects_dataset/extractedFeat/ </description> 
+        <value>
+          <string>IAI_VFH_MatTrain_breakfast1shape</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>trainLabel_matrix</name>
+        <description>trainLabel_matrix can be found in path /rs_resources/objects_dataset/extractedFeat/ </description> 
+        <value>
+          <string>IAI_VFH_MatTrainLabel_breakfast1shape</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+      <import location="../typesystem/all_types.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+          <languagesSupported>
+            <language>x-unspecified</language>
+          </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

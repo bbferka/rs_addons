@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.cpp</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>rs_trainerAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>TrainerAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    
+    <configurationParameters>
+
+      <configurationParameter>
+        <name>classifier_type</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>train_data_name</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>train_label_name</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+
+    <configurationParameterSettings>
+
+      <nameValuePair>
+        <name>classifier_type</name>
+        <description>classifier_type should be rssvm, rsrf, rsgbt </description>
+        <value>
+          <string>rsrf</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>train_data_name</name>
+        <description>train_data_name can be found in path /rs_resources/objects_dataset/extractedFeat/ </description> 
+        <value>
+          <string>IAI_CNN_MatTrain_objects</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>train_label_name</name>
+        <description>train_label_name can be found in path /rs_resources/objects_dataset/extractedFeat/ </description>
+        <value>
+          <string>IAI_CNN_MatTrainLabel_objects</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../typesystem/all_types.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+          <languagesSupported>
+            <language>x-unspecified</language>
+          </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.cpp</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>rs_knnAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>KnnAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    
+    <configurationParameters>
+
+      <configurationParameter>
+        <name>set_mode</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>trainKNN_matrix</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>trainKNNLabel_matrix</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+
+      <configurationParameter>
+        <name>actual_class_label</name>
+        <type>string</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    
+    <configurationParameterSettings>
+
+      <nameValuePair>
+        <name>set_mode</name>
+        <description>Which should be CL (To classify data, which are coming from Robosherlock pipeline) 
+        or GT (To set groundTruth to the data and store it in mongDB databese) </description>  
+        <value>
+          <string>CL</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>trainKNN_matrix</name>
+        <description>trainKNN_matrix can be found in path /rs_resources/objects_dataset/extractedFeat/ </description> 
+        <value>
+          <string>IAI_VFH_MatTrain_breakfast1shape</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>trainKNNLabel_matrix</name>
+        <description>trainKNNLabel_matrix can be found in path /rs_resources/objects_dataset/extractedFeat/ </description>        
+        <value>
+          <string>IAI_VFH_MatTrainLabel_breakfast1shape</string>
+        </value>
+      </nameValuePair>
+
+      <nameValuePair>
+        <name>actual_class_label</name>
+        <description>actual_class_label can be found in path /rs_resources/objects_dataset/extractedFeat/, 
+        which is object to class map </description> 
+        <value>
+          <string>IAI_VFH_ClassLabel_breakfast1shape</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../typesystem/all_types.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+          <languagesSupported>
+            <language>x-unspecified</language>
+          </languagesSupported>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+</taeDescription>
