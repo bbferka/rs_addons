@@ -133,9 +133,6 @@
     <delegateAnalysisEngine key="RegionFilter">
       <import location="../../../robosherlock/descriptors/annotators/filter/RegionFilter.xml"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="ResultAdvertiser">
-      <import location="../../../robosherlock/descriptors/annotators/io/ResultAdvertiser.xml"/>
-    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="RfAnnotator">
       <import location="../annotators/RfAnnotator.xml"/>
     </delegateAnalysisEngine>
