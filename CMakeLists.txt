@@ -18,7 +18,6 @@ endif(json_prolog_FOUND)
 find_package(Caffe QUIET)
 find_package(aruco QUIET)
 find_package(MPI QUIET)
-find_package(RapidJSON REQUIRED) 
 
 find_package(Boost REQUIRED COMPONENTS python numpy)
 find_package(PythonLibs REQUIRED)
@@ -36,6 +35,7 @@ endif(Caffe_FOUND)
 find_package(catkin REQUIRED robosherlock
     message_generation
     message_runtime
+	rapidjson_ros
     ${OPTIONAL_simtrack}
     ${OPTIONAL_json_prolog}
     )
